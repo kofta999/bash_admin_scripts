@@ -73,6 +73,7 @@ if [[ $ans_firewall == "y"  || $ans_firewall == "Y" ]]; then
 	else
 		echo "An Error has occured while allowing Apache2 in firewalld."
 		exit
+	fi
 elif [[ $ans_firewall == "n" || $ans_firewall == "N" ]]; then
       :
 else
