@@ -19,7 +19,7 @@ firewall_port () {
 }
 
 copy_static () {
-	sudo cp -R ./$1 /var/www/$1 && \
+	sudo cp -r ./$1 /var/www/ && \
 	sudo chown -R apache:apache /var/www/$1 && \
 	sudo chmod 755 /var/www/$1
 }
