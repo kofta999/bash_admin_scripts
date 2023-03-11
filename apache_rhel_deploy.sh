@@ -19,7 +19,7 @@ firewall_port () {
 }
 
 copy_static () {
-	sudo cp ./$1 /var/www/$1 && \
+	sudo cp -R ./$1 /var/www/$1 && \
 	sudo chown -R apache:apache /var/www/$1 && \
 	sudo chmod 755 /var/www/$1
 }
@@ -98,7 +98,7 @@ echo "Step 3/6: Copying your static website to /var/www/<YOUR_WEBSITE>..."
 sleep 0.5
 # TODO: Update it to a for loop with a list of sites to be copied.
 
-read -p "Enter the name of your website directory that will be copied to /var/www" site_name
+read -p "Enter the name of your website directory that will be copied to /var/www " site_name
 
 copy_static $site_name
 
@@ -130,7 +130,7 @@ fi
 echo "Step 5/6: Adding the site's config file to sites-avaliable directory..."
 sleep 0.5
 
-read -p "Enter the name of the config file" config_name
+read -p "Enter the name of the config file. " config_name
 read -p "Enter the website's domain name 'example.com'. " domain_name
 read -p "Enter the server admin's email address. " email_name
 
